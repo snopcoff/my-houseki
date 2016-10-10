@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+    <h1>User Information</h1>
+    Name: <%= current_user.name %><br />
+    Gender: 
+    <% if current_user.gender %>
+    Male
+    <% else %>
+    Female
+    <% end %><br />
+    Address: <%= current_user.address %><br />
+    Hobbies:<br />
+    <div>
+        <%= current_user.hobbies %>
+    </div>
+<% else %>
+    <h1>Hello, Guest</h1>
+<% end %>
