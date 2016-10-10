@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  # get 'users/show'
+
   root 'static_pages#home'
+  match 'users/profile/:id' => 'users#show', via: :get, as: 'show_user'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
