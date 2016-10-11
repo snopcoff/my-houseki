@@ -276,4 +276,6 @@ Devise.setup do |config|
   config.omniauth :twitter, "w8M89XmSxFkumQdrpzSGwww5F", "G46oHH0u6wEy1Dmqx6duHBlKzTYhDnz06QsjUFGBVVsR5Veg6S",
                   callback_url: "https://houseki-tabemono-snopcoff.c9users.io/users/auth/twitter/callback", 
                   :authorize_params => {:force_login => 'true'}
+  config.omniauth :google_oauth2, "104920111196-fr5n6t8ml5evgo630v4k37md52a45tnr.apps.googleusercontent.com", 
+                  "i3dEOM-5s-Y8wm4b8ZqT32XV"
 end
