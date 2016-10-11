@@ -5,7 +5,6 @@
 body {
     padding-top: 60px;
 }
-
 section {
     overflow: auto;
 }
@@ -14,7 +13,18 @@ textarea {
     resize: vertical;
 }
 
+.center {
+    text-align: center;
+    .actions {
+        text-align: left;
+    }
+    .form-group {
+        text-align: left;
+    }
+}
+
 /* form */
+
 #error_explanation {
     color: red;
     ul {
