@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
+  
+  mount_uploader :avatar, AvatarUploader
          
   validates :name, presence: true
   
@@ -12,6 +14,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name
+      user.avatar = auth.info.image
     end
   end
   
