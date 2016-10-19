@@ -8,7 +8,7 @@
         Profile
     </h1>
     <div class="row">
-        <div class="col-md-4 side">
+        <div class="col-md-4 left-side">
             <div>
                 <div>
                     <%= image_tag(@user.avatar_url, class: 'avatar') if @user.avatar? %>
@@ -32,7 +32,7 @@
                 <% end %>
             </div>
         </div>
-        <div class="col-md-8 side">
+        <div class="col-md-8 right-side">
         </div>
     </div>
 </div>

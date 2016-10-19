@@ -52,7 +52,12 @@ textarea {
 }
 
 /* profile */
-.side {
+.left-side {
     text-align: left;
     border-right: 1px solid black;
+}
+
+.right-side {
+    text-align: left;
+    border-left: 1px solid black;
 }
