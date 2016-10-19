@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @fooddrink.user.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fooddrink.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @fooddrink.address %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @fooddrink.foodtype %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @fooddrink.file %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @fooddrink.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_fooddrink_path(@fooddrink) %> |
+<%= link_to 'Back', fooddrinks_path %>
