@@ -1,15 +1,38 @@
-<h1>Profile</h1>
-<%= image_tag(@user.avatar_url, class: 'avatar') if @user.avatar? %>
-Name: <%= @user.name %><br />
-Email: <%= @user.email %><br />
-Gender: 
-<% if @user.gender %>
-Male
-<% else %>
-Female
-<% end %><br />
-Contact Address: <%= @user.address %><br />
-Hobbies: <%= @user.hobbies %><br />
-<% if user_signed_in? && current_user.id == @user.id %>
-<%= link_to "Change Profile", edit_user_registration_path %>
-<% end %>
+<div class="center">
+    <h1>
+        <% if user_signed_in? && current_user.id == @user.id %>
+        My
+        <% else %>
+        <%= @user.name %>'s
+        <% end %>
+        Profile
+    </h1>
+    <div class="row">
+        <div class="col-md-4 side">
+            <div>
+                <div>
+                    <%= image_tag(@user.avatar_url, class: 'avatar') if @user.avatar? %>
+                </div>
+                <h3><%= @user.name %></h3>
+                Email: <%= @user.email %><br />
+                Gender: 
+                <% if @user.gender %>
+                Male
+                <% else %>
+                Female
+                <% end %><br />
+                <% if @user.address.presence %>
+                    Contact Address: <%= @user.address %>
+                <% end %>
+                <% if @user.hobbies.presence %>
+                    Hobbies: <%= @user.hobbies %>
+                <% end %>
+                <% if user_signed_in? && current_user.id == @user.id %>
+                <%= link_to "Change Profile", edit_user_registration_path %>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-8 side">
+        </div>
+    </div>
+</div>

@@ -1,58 +1,76 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<div class="center">
+  <h1>Edit Profile</h1>
   
-  <div class="field">
-    <%= f.label :gender %>: 
-    <%= f.label :gender, "Male", value: "true" %>
-    <%= f.radio_button :gender, true, checked: true %>
-    <%= f.label :gender, "Female", value: "false" %>
-    <%= f.radio_button :gender, false %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal", method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-group">
+          <%= f.label :name, class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :gender, class: "col-md-4 control-label" %>:
+          <div class="col-md-8">
+            <%= f.label :gender, "Male", value: "true", class: "radio-inline" %>
+            <%= f.radio_button :gender, true, checked: true %>
+            <%= f.label :gender, "Female", value: "false", class: "radio-inline" %>
+            <%= f.radio_button :gender, false %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :address, class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :address, class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label 'Avatar Upload', class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.file_field :avatar %>
+            <%= f.hidden_field :avatar_cache %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :hobbies, class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_area :hobbies, class: "form-control", placeholder: "Tell us something about your hobbies" %>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <%= f.label :password, class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Leave blank if you don't want to change it" %>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <%= f.label :current_password, class: "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Insert current password to apply changes" %>
+          </div>
+        </div>
+      
+        <div class="actions form-group">
+          <div class="col-md-8 col-md-offset-4">
+            <%= f.submit "Update Profile", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
   </div>
-  
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-  
-  <div class="field">
-    <%= image_tag(@user.avatar_url, class: 'avatar') if @user.avatar? %>
-    <%= f.label 'Avatar Upload' %>
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :hobbies %> <i>(Tell us something about your hobbies)</i>
-    <%= f.text_area :hobbies %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  </div>
-<% end %>
+</div>
