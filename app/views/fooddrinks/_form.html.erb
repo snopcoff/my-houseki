@@ -38,6 +38,18 @@
       </div>
       
       <div class="form-group">
+        <%= f.label :price, class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <div class="col-md-6">
+            <%= f.number_field :price, class: "col-md-6 form-control" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.select :price_unit, options_for_select(["vnd", "dollar", "euro", "yen"]), {}, {:class => "form-control"} %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
         <%= f.label 'Food/Drink Image Upload', class: "col-md-4 control-label" %>
         <div class="col-md-8">
           <%= f.file_field :file %>

@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019065353) do
+ActiveRecord::Schema.define(version: 20161019090103) do
 
   create_table "fooddrinks", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
     t.string   "address"
     t.string   "file"
-    t.boolean  "foodtype",   default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.boolean  "foodtype",                           default: true
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.decimal  "price",      precision: 8, scale: 2, default: 0.0
+    t.string   "price_unit",                         default: "vnd"
   end
 
   create_table "sessions", force: :cascade do |t|

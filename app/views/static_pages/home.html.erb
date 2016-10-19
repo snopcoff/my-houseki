@@ -2,32 +2,35 @@
   <div class="col-md-3 left-side">
     <h3>Categories</h3>
   </div>
+  
   <div class="col-md-9 right-side">
-    <div>
+    <div class="col-md-12">
       <h3>New Review</h3>
     </div>
-    <div>
+    
+    <div class="col-md-12">
       <h3>Foods</h3>
       <% @fooddrinks.each do |food| %>
-        <div class="col-md-4">
           <% if food.foodtype %>
-            <%= link_to fooddrink_path(food.id) do %>
-              <%= image_tag(food.file, class: "img-thumbnail") %>
-            <% end %>
+            <div class="col-md-4">
+              <%= link_to fooddrink_path(food.id) do %>
+                <%= image_tag(food.file, class: "img-thumbnail") %>
+              <% end %>
+            </div>
           <% end %>
-        </div>
       <% end %>
     </div>
-    <div>
+    
+    <div class="col-md-12">
       <h3>Drinks</h3>
       <% @fooddrinks.each do |drink| %>
-        <div class="col-md-4">
-          <% if !drink.foodtype %>
+        <% if !drink.foodtype %>
+          <div class="col-md-4">
             <%= link_to fooddrink_path(drink.id) do %>
               <%= image_tag(drink.file, class: "img-thumbnail") %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
