@@ -1,6 +1,6 @@
 class FooddrinksController < ApplicationController
   before_action :set_fooddrink, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   # GET /fooddrinks
   # GET /fooddrinks.json

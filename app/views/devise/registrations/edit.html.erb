@@ -13,7 +13,7 @@
         </div>
         
         <div class="form-group">
-          <%= f.label :gender, class: "col-md-4 control-label" %>:
+          <%= f.label :gender, class: "col-md-4 control-label" %>
           <div class="col-md-8">
             <%= f.label :gender, "Male", value: "true", class: "radio-inline" %>
             <%= f.radio_button :gender, true, checked: true %>
@@ -59,9 +59,9 @@
         </div>
       
         <div class="form-group">
-          <%= f.label :current_password, class: "col-md-4 control-label" %>
+          <%= f.label "Current password*", class: "col-md-4 control-label" %>
           <div class="col-md-8">
-            <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Insert current password to apply changes" %>
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current password is required to apply changes" %>
           </div>
         </div>
       

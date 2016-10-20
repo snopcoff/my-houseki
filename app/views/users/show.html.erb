@@ -22,17 +22,15 @@
                 Female
                 <% end %><br />
                 <% if @user.address.presence %>
-                    Contact Address: <%= @user.address %>
+                    Contact Address: <%= @user.address %><br />
                 <% end %>
                 <% if @user.hobbies.presence %>
-                    Hobbies: <%= @user.hobbies %>
+                    Hobbies: <%= @user.hobbies %><br />
                 <% end %>
                 <% if user_signed_in? && current_user.id == @user.id %>
                 <%= link_to "Change Profile", edit_user_registration_path %>
                 <% end %>
             </div>
-        </div>
-        <div class="col-md-8 right-side">
         </div>
     </div>
 </div>
