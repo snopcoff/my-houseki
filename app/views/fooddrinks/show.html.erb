@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-4 center">
+    <%= image_tag(@fooddrink.file, class: "img-thumbnail") %>
+    <% if user_signed_in? && @fooddrink.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_fooddrink_path(@fooddrink), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
+  <div class="col-md-8">
+    <h3><%= @fooddrink.foodtype ? "Food":"Drink" %>'s Information</h3>
+    <div>
+      <div>
+        <label><%= @fooddrink.foodtype ? "Food":"Drink" %>'s name: </label>
+        <%= @fooddrink.name %>
+      </div>
+      <div>
+        <label>Place: </label>
+        <%= @fooddrink.address %>
+      </div>
+      <div>
+        <label>Price: </label>
+        <%= @fooddrink.price %> <%= @fooddrink.price_unit %>
+      </div>
+      <div class="right-align">
+        <i>Created by <%=link_to @fooddrink.user.name, show_user_path(@fooddrink.user.id) %> 
+        at <%= @fooddrink.created_at %>.
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
