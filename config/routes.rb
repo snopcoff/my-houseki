@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'admin' => 'admin#index'
-  put 'admin/:id' => 'admin#update_user'
-  patch 'admin/:id' => 'admin#update_user'
+  put 'admin/user/:id' => 'admin#update_user'
+  patch 'admin/user/:id' => 'admin#update_user'
+  # delete 'admin/user/:id' => 'admin#destroy_user'
+  match 'admin/user/:id' => 'admin#destroy_user', via: :delete, as: 'delete_user'
+  
+  # match 'admin/user/:id'
 
   # get 'admin/update_user'
 
