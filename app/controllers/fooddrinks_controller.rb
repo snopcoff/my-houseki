@@ -1,6 +1,8 @@
 class FooddrinksController < ApplicationController
   before_action :set_fooddrink, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  
+  load_and_authorize_resource
 
   # GET /fooddrinks
   # GET /fooddrinks.json
@@ -71,6 +73,7 @@ class FooddrinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fooddrink_params
-      params.require(:fooddrink).permit(:user_id, :name, :address, :foodtype, :file, :created_at, :price, :price_unit)
+      params.require(:fooddrink).permit(:user_id, :name, :address, :foodtype, :file, :created_at, :price, :price_unit, :review)
     end
+    
 end
