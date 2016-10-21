@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021060614) do
+ActiveRecord::Schema.define(version: 20161021081127) do
 
   create_table "fooddrinks", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20161021060614) do
     t.datetime "updated_at",                                         null: false
     t.decimal  "price",      precision: 8, scale: 2, default: 0.0
     t.string   "price_unit",                         default: "vnd"
+    t.text     "review"
   end
 
   create_table "roles", force: :cascade do |t|

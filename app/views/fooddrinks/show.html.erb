@@ -23,10 +23,18 @@
         <label>Price: </label>
         <%= @fooddrink.price %> <%= @fooddrink.price_unit %>
       </div>
+      
+      <% if @fooddrink.review.presence %>
+        <div class="review">
+          <label>Review</label><br />
+          <%= simple_format(@fooddrink.review) %>
+        </div>
+      <% end %>
+      
       <div class="right-align">
-        <i>Created by <%=link_to @fooddrink.user.name, show_user_path(@fooddrink.user.id) %> 
+        <b><i>Created by <%=link_to @fooddrink.user.name, show_user_path(@fooddrink.user.id) %> 
         at <%= @fooddrink.created_at %>.
-        </i>
+        </i></b>
       </div>
     </div>
   </div>
