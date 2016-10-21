@@ -1,6 +1,6 @@
 class FooddrinksController < ApplicationController
   before_action :set_fooddrink, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   
   load_and_authorize_resource
 
@@ -60,7 +60,7 @@ class FooddrinksController < ApplicationController
   def destroy
     @fooddrink.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Fooddrink was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Fooddrink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
