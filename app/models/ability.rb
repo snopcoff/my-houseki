@@ -8,7 +8,7 @@ class Ability
       if user.has_role? :admin
         can :manage, :all
       else
-        can :read, [Fooddrink, User]
+        can :read, :all
         can :manage, Fooddrink, user_id: user.id
       end
     #
