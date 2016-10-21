@@ -13,7 +13,7 @@
       <td><%= user.email %></td>
       <td><%= user.roles.first.name if user.roles.first.presence %></td>
       <td>
-        <%= form_tag("/admin/" + user.id.to_s, method: :PUT) do %>
+        <%= form_tag("/admin/user/" + user.id.to_s, method: :PUT) do %>
           <input type="submit" value="Make Admin"/>
         <% end %>
       </td>

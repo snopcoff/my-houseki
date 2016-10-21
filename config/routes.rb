@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'admin' => 'admin#index'
-  put 'admin/:id' => 'admin#update_user'
-  patch 'admin/:id' => 'admin#update_user'
+  put 'admin/user/:id' => 'admin#update_user'
+  patch 'admin/user/:id' => 'admin#update_user'
 
   # get 'admin/update_user'
 
