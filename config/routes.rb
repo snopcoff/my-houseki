@@ -72,4 +72,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  Commontator::Engine.routes.draw do
+  resources :threads, :only => [:show] do
+    resources :comments, :except => [:index, :destroy], :shallow => true do
+      member do
+        delete 'delete'
+      end
+    end
+  end
+end
+  
 end
