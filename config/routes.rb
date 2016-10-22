@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :fooddrinks
   # get 'users/show'
+  
+  mount Commontator::Engine => '/commontator'
 
   root 'static_pages#home'
   match 'users/profile/:id' => 'users#show', via: :get, as: 'show_user'
