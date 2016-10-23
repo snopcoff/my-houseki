@@ -1,11 +1,6 @@
 <div class="center">
     <h1>
-        <% if user_signed_in? && current_user.id == @user.id %>
-        My
-        <% else %>
-        <%= @user.name %>'s
-        <% end %>
-        Profile
+        <%= getname(@user, current_user) %> Profile
     </h1>
     <div class="row">
         <div class="col-md-4 left-side">
@@ -31,6 +26,10 @@
                 <%= link_to "Change Profile", edit_user_registration_path %>
                 <% end %>
             </div>
+        </div>
+        <div class="col-md-8 right-side">
+            <h3><%= getname(@user, current_user) %> Reviews</h3>
+            <%= render 'users/show_fooddrinks.html.erb' %>
         </div>
     </div>
 </div>

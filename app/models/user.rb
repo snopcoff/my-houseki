@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
   # after_create :assign_role
   mount_uploader :avatar, AvatarUploader
+  
+  has_many :fooddrinks, :dependent => :destroy
   acts_as_commontator
          
   validates :name, presence: true
