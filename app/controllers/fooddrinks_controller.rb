@@ -13,6 +13,7 @@ class FooddrinksController < ApplicationController
   # GET /fooddrinks/1
   # GET /fooddrinks/1.json
   def show
+    @fooddrinks = Fooddrink.all
   end
 
   # GET /fooddrinks/new
