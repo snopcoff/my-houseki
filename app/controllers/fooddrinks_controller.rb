@@ -7,7 +7,7 @@ class FooddrinksController < ApplicationController
   # GET /fooddrinks
   # GET /fooddrinks.json
   def index
-    @fooddrinks = Fooddrink.all
+    @results = @search.result
   end
 
   # GET /fooddrinks/1
