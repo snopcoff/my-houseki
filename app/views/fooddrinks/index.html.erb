@@ -1,37 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Fooddrinks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Type</th>
-      <th>File</th>
-      <th>Created at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @fooddrinks.each do |fooddrink| %>
-      <tr>
-        <td><%= fooddrink.user_id %></td>
-        <td><%= fooddrink.name %></td>
-        <td><%= fooddrink.address %></td>
-        <td><%= fooddrink.foodtype %></td>
-        <td><%= fooddrink.file %></td>
-        <td><%= fooddrink.created_at %></td>
-        <td><%= link_to 'Show', fooddrink %></td>
-        <td><%= link_to 'Edit', edit_fooddrink_path(fooddrink) %></td>
-        <td><%= link_to 'Destroy', fooddrink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% if @results.presence %>
+    <% @results.each do |result| %>
+        <%= link_to(fooddrink_path(result.id)) do %>
+            <%= image_tag result.file, class: 'img-thumbnail' %><br />
+            <%= result.name %><br />
+            Type: 
+            <% if result.foodtype %>
+                Food
+            <% else %>
+                Drink
+            <% end %><br />
+            Author: <%= result.user.name %>
+        <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Fooddrink', new_fooddrink_path %>
+<% else %>
+Result not found.
+<% end %>

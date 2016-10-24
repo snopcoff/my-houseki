@@ -1,0 +1,8 @@
+<%= search_form_for @search do |f| %>
+  <div class="large-8 small-9 columns">
+    <%= f.text_field :name_cont, class: "radius-left expand", placeholder: "Food/Drink name" %>
+  </div>
+    <div class="large-4 small-3 columns">
+      <%= f.submit "Search", class: "radius-right button" %>
+    </div>
+<% end %>
