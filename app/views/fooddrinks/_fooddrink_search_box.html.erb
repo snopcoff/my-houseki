@@ -1,8 +1,12 @@
-<%= search_form_for @search do |f| %>
-  <div class="large-8 small-9 columns">
-    <%= f.text_field :name_cont, class: "radius-left expand", placeholder: "Food/Drink name" %>
-  </div>
-    <div class="large-4 small-3 columns">
-      <%= f.submit "Search", class: "radius-right button" %>
+<%= search_form_for @search, :html => {:class => "navbar-form"} do |f| %>
+
+    <div class="form-group input-group search-box">
+      <%= f.text_field :name_cont, class: "radius-left expand form-control", placeholder: "Food/Drink name" %>
+      <span class="input-group-addon " >
+        <span class="glyphicon glyphicon-search"></span>
+      </span>
     </div>
+
+    <% #f.submit "Search", class: "btn btn-default btn-sm" %>
+
 <% end %>

@@ -2,17 +2,18 @@
 
 <div class="row">
   <div class="col-md-4 center">
-    <%= image_tag(@fooddrink.file, class: "img-thumbnail") %>
-    <% if user_signed_in? && @fooddrink.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_fooddrink_path(@fooddrink), class: "btn btn-primary" %>
-    <% end %>
+    <%= image_tag(@fooddrink.file, class: "img-thumbnail large-cover") %>
   </div>
-  
-  <div class="col-md-8">
-    <h3><%= @fooddrink.foodtype ? "Food":"Drink" %>'s Information</h3>
-    <div>
+
+  <div class="col-md-8 ">
+    <h3><%= @fooddrink.foodtype ? "Food" : "Drink" %>'s Information
+      <% if user_signed_in? && @fooddrink.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_fooddrink_path(@fooddrink), class: "btn btn-primary" %>
+      <% end %>
+    </h3>
+    <div class="description-box">
       <div>
-        <label><%= @fooddrink.foodtype ? "Food":"Drink" %>'s name: </label>
+        <label><%= @fooddrink.foodtype ? "Food" : "Drink" %>'s name: </label>
         <%= @fooddrink.name %>
       </div>
       <div>
@@ -23,20 +24,22 @@
         <label>Price: </label>
         <%= @fooddrink.price %> <%= @fooddrink.price_unit %>
       </div>
-      
+
       <% if @fooddrink.review.presence %>
-        <div class="review">
-          <label>Review</label><br />
-          <%= simple_format(@fooddrink.review) %>
-        </div>
+          <div class="review">
+            <label>Review</label><br/>
+            <%= simple_format(@fooddrink.review) %>
+          </div>
       <% end %>
-      
-      <div class="right-align">
-        <b><i>Created by <%=link_to @fooddrink.user.name, show_user_path(@fooddrink.user.id) %> 
-        at <%= @fooddrink.created_at %>.
-        </i></b>
-      </div>
+
     </div>
+
+    <div class="right-align ft">
+      <b><i>Created by <%= link_to @fooddrink.user.name, show_user_path(@fooddrink.user.id) %>
+        at <%= @fooddrink.created_at %>.
+      </i></b>
+    </div>
+
   </div>
 </div>
 
