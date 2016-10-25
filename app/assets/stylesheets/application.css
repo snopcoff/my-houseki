@@ -15,6 +15,7 @@
  *= require bootstrap-social
  *= require font-awesome
  *= require commontator/application
+ *= require toastr
  */
 
 /* navbar */

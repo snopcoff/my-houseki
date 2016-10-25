@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require toastr
 //= require_tree .
+
+window.onload = function reset(){
+    var notice = $('#notice');
+    if (notice.text() != ""){
+        toastr.success(notice.text());
+        notice.hide();
+    }
+
+}
