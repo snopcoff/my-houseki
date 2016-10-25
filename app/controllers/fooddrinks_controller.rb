@@ -1,16 +1,19 @@
 class FooddrinksController < ApplicationController
   before_action :set_fooddrink, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  
+  load_and_authorize_resource
 
   # GET /fooddrinks
   # GET /fooddrinks.json
   def index
-    @fooddrinks = Fooddrink.all
+    @results = @search.result
   end
 
   # GET /fooddrinks/1
   # GET /fooddrinks/1.json
   def show
+    @fooddrinks = Fooddrink.all
   end
 
   # GET /fooddrinks/new
@@ -58,7 +61,7 @@ class FooddrinksController < ApplicationController
   def destroy
     @fooddrink.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Fooddrink was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Fooddrink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +74,7 @@ class FooddrinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fooddrink_params
-      params.require(:fooddrink).permit(:user_id, :name, :address, :foodtype, :file, :created_at, :price, :price_unit)
+      params.require(:fooddrink).permit(:user_id, :name, :address, :foodtype, :file, :created_at, :price, :price_unit, :review)
     end
+    
 end

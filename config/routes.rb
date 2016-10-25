@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
+  get 'admin' => 'admin#index'
+  put 'admin/user/:id' => 'admin#update_user'
+  patch 'admin/user/:id' => 'admin#update_user'
+  # delete 'admin/user/:id' => 'admin#destroy_user'
+  match 'admin/user/:id' => 'admin#destroy_user', via: :delete, as: 'delete_user'
+  
+  # match 'admin/user/:id'
+
+  # get 'admin/update_user'
+
   resources :fooddrinks
   # get 'users/show'
+  
+  mount Commontator::Engine => '/commontator'
 
   root 'static_pages#home'
   match 'users/profile/:id' => 'users#show', via: :get, as: 'show_user'
@@ -60,4 +72,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  Commontator::Engine.routes.draw do
+  resources :threads, :only => [:show] do
+    resources :comments, :except => [:index, :destroy], :shallow => true do
+      member do
+        delete 'delete'
+      end
+    end
+  end
+end
+  
 end

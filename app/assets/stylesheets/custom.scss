@@ -5,181 +5,114 @@
 
 /* universal */
 body {
-    padding-top: 60px;
+  padding-top: 60px;
 }
+
 section {
-    overflow: auto;
+  overflow: auto;
 }
 
 a:visited {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 textarea {
-    resize: none;
+  resize: none;
+}
+
+.background-image {
+  background-image: url("../bg.jpg");
+  background-size: cover;
+  display: block;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  height: 800px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+.auth-content {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  position: relative;
+  margin: auto;
+  z-index: 2;
+  /********/
+  padding: 10px 20px;
+  top: 90px;
+  min-width: 300px;
+}
+div.auth-content:hover, div.auth-content:active, div.auth-content:focus {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .center {
-    text-align: center;
-    .actions {
-        text-align: left;
-    }
-    .form-group {
-        text-align: left;
-    }
-    h1 {
-        margin-bottom: 30px;
-    }
+  text-align: center;
+  .actions {
+    text-align: left;
+  }
+  .form-group {
+    text-align: left;
+  }
+  h1 {
+    margin-bottom: 30px;
+  }
 }
 
 .avatar {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
 }
 
 /* form */
 
 #error_explanation {
+  color: red;
+  ul {
     color: red;
-    ul {
-        color: red;
-        margin: 0 0 30px 0;
-    }
+    margin: 0 0 30px 0;
+  }
 }
 
 .field_with_errors {
-    @extend .has-error;
-    .form-control {
-        color: $state-danger-text;
-    }
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
 
 /* profile */
 .left-side {
-    text-align: left;
-    border-right: 1px solid black;
+  text-align: left;
+  border-right: 1px solid black;
 }
 
 .right-side {
-    text-align: left;
-    border-left: 1px solid black;
+  text-align: left;
+  border-left: 1px solid black;
 }
 
 /* foods drinks */
 .right-align {
-    text-align: right;
+  text-align: right;
 }
 
-/* navbar */
-.navbar-custom {
-  background-color: #00befa;
-  border-color: #00a5d9;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#2ecdff), to(#00befa));
-  background-image: -webkit-linear-gradient(top, #2ecdff, 0%, #00befa, 100%);
-  background-image: -moz-linear-gradient(top, #2ecdff 0%, #00befa 100%);
-  background-image: linear-gradient(to bottom, #2ecdff 0%, #00befa 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2ecdff', endColorstr='#ff00befa', GradientType=0);
-}
-.navbar-custom .navbar-brand {
-  color: #ffffff;
-}
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .navbar-brand:focus {
-  color: #e6e6e6;
-  background-color: transparent;
-}
-.navbar-custom .navbar-text {
-  color: #ffffff;
-}
-.navbar-custom .navbar-nav > li > a {
-  color: #ffffff;
-}
-.navbar-custom .navbar-nav > li > a:hover,
-.navbar-custom .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: #01b3eb;
-}
-.navbar-custom .navbar-nav > .active > a,
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #00a5d9;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#00a5d9), to(#0dc5ff));
-  background-image: -webkit-linear-gradient(top, #00a5d9, 0%, #0dc5ff, 100%);
-  background-image: -moz-linear-gradient(top, #00a5d9 0%, #0dc5ff 100%);
-  background-image: linear-gradient(to bottom, #00a5d9 0%, #0dc5ff 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00a5d9', endColorstr='#ff0dc5ff', GradientType=0);
-}
-.navbar-custom .navbar-nav > .disabled > a,
-.navbar-custom .navbar-nav > .disabled > a:hover,
-.navbar-custom .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
-  background-color: transparent;
-}
-.navbar-custom .navbar-toggle {
-  border-color: #dddddd;
-}
-.navbar-custom .navbar-toggle:hover,
-.navbar-custom .navbar-toggle:focus {
-  background-color: #dddddd;
-}
-.navbar-custom .navbar-toggle .icon-bar {
-  background-color: #cccccc;
-}
-.navbar-custom .navbar-collapse,
-.navbar-custom .navbar-form {
-  border-color: #00a3d6;
-}
-.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
-.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
-}
-.navbar-custom .navbar-nav > .open > a,
-.navbar-custom .navbar-nav > .open > a:hover,
-.navbar-custom .navbar-nav > .open > a:focus {
-  background-color: #00a5d9;
-  color: #ffffff;
-}
-.navbar-custom .navbar-nav > .open > a .caret,
-.navbar-custom .navbar-nav > .open > a:hover .caret,
-.navbar-custom .navbar-nav > .open > a:focus .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
-}
-.navbar-custom .navbar-nav > .dropdown > a .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
-}
-@media (max-width: 767) {
-  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
-  }
-  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffffff;
-    background-color: transparent;
-  }
-  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffffff;
-    background-color: #00a5d9;
-  }
-  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #cccccc;
-    background-color: transparent;
+.review {
+  p {
+    margin-bottom: 10px;
   }
 }
-.navbar-custom .navbar-link {
-  color: #ffffff;
+
+/* comment */
+.comment-avatar {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
 }
-.navbar-custom .navbar-link:hover {
-  color: #ffffff;
-  background-color: #01b3eb;
+.social-button-group{
+  width: 600px;
 }

@@ -1,11 +1,15 @@
 class User < ActiveRecord::Base
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
-  
+  # after_create :assign_role
   mount_uploader :avatar, AvatarUploader
+  
+  has_many :fooddrinks, :dependent => :destroy
+  acts_as_commontator
          
   validates :name, presence: true
   
@@ -26,4 +30,8 @@ class User < ActiveRecord::Base
       end
     end
   end
+  
+#  def assign_role
+#    add_role(:member)
+#  end
 end
