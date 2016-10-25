@@ -3,6 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cover {
-    width: 100px;
-    height: 150px;
+  width: 100px;
+  height: 150px;
+}
+$search-box: white;
+$search-text: black;
+$search-border-radius: 7px;
+
+
+.search-box {
+  input {
+    color: $search-text;
+    background-color: $search-box;
+    border: transparent;
+    border-radius: $search-border-radius;
+  }
+  input:hover {
+    color: black;
+    background-color: white;
+
+  }
+  .input-group-addon{
+    background-color: $search-box;
+    color: $search-text;
+    border: 3px $search-box;
+    border-top-right-radius: $search-border-radius;
+    border-bottom-right-radius: $search-border-radius;
+  }
 }
