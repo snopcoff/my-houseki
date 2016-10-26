@@ -1,0 +1,1 @@
+json.partial! "fd_types/fd_type", fd_type: @fd_type
