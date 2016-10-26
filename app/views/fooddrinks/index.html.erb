@@ -1,0 +1,17 @@
+<% if @results.presence %>
+    <% @results.each do |result| %>
+        <%= link_to(fooddrink_path(result.id)) do %>
+            <%= image_tag result.file, class: 'img-thumbnail' %><br />
+            <%= result.name %><br />
+            Type: 
+            <% if result.foodtype %>
+                Food
+            <% else %>
+                Drink
+            <% end %><br />
+            Author: <%= result.user.name %>
+        <% end %>
+    <% end %>
+<% else %>
+Result not found.
+<% end %>

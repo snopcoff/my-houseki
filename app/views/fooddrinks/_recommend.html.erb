@@ -1,0 +1,8 @@
+<% @fooddrinks.each do |fooddrink| %>
+    <% if fooddrink.id != @fooddrink.id &&\
+        fooddrink.user_id == @fooddrink.user_id %>
+        <%= link_to fooddrink_path(fooddrink.id) do %>
+            <%= image_tag(fooddrink.file, class: "img-thumbnail cover") %>
+        <% end %>
+    <% end %>
+<% end %>
