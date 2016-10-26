@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022072605) do
+ActiveRecord::Schema.define(version: 20161026023646) do
 
   create_table "commontator_comments", force: :cascade do |t|
     t.string   "creator_type"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20161022072605) do
 
   add_index "commontator_threads", ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
 
+  create_table "fd_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "foodtype"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fooddrinks", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -66,7 +73,10 @@ ActiveRecord::Schema.define(version: 20161022072605) do
     t.decimal  "price",      precision: 8, scale: 2, default: 0.0
     t.string   "price_unit",                         default: "vnd"
     t.text     "review"
+    t.integer  "fd_type_id"
   end
+
+  add_index "fooddrinks", ["fd_type_id"], name: "index_fooddrinks_on_fd_type_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
