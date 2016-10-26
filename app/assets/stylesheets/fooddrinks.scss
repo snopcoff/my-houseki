@@ -1,0 +1,56 @@
+// Place all the styles related to the fooddrinks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$img-width: 100px;
+.cover {
+  min-width: $img-width;
+  height:calc(2 * #{$img-width}) ;
+}
+
+.large-cover {
+  min-width: calc(3 * #{$img-width});
+  height: calc(4 * #{$img-width});
+}
+
+$search-box: white;
+$search-text: black;
+$search-border-radius: 7px;
+
+.search-box {
+  input {
+    color: $search-text;
+    background-color: $search-box;
+    border: transparent;
+    border-radius: $search-border-radius;
+  }
+  input:hover {
+    color: black;
+    background-color: white;
+
+  }
+  .input-group-addon {
+    background-color: $search-box;
+    color: $search-text;
+    border: 3px $search-box;
+    border-top-right-radius: $search-border-radius;
+    border-bottom-right-radius: $search-border-radius;
+  }
+}
+
+.description-box{
+  min-height: 200px;
+  display: block;
+}
+.ft {
+  box-shadow: 0 1px 0 #fff inset;
+  clear: both;
+  border-top: 1px dashed #ccc;
+  padding: 0 21px 0 21px;
+  background: #f6f6f6;
+  float: right;
+  width: 100%;
+  height: 30px;
+  color: gray;
+  text-align: right;
+}
