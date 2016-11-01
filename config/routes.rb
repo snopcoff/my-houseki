@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fd_types
   get 'admin' => 'admin#index'
   put 'admin/user/:id' => 'admin#update_user'
   patch 'admin/user/:id' => 'admin#update_user'
@@ -74,6 +75,7 @@ Rails.application.routes.draw do
   #   end
   
   Commontator::Engine.routes.draw do
+  resources :fd_types
   resources :threads, :only => [:show] do
     resources :comments, :except => [:index, :destroy], :shallow => true do
       member do
