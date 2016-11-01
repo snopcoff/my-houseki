@@ -1,5 +1,6 @@
 class FdTypesController < ApplicationController
   before_action :set_fd_type, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :authorized_for_admin
 
   # GET /fd_types
   # GET /fd_types.json
@@ -74,5 +75,9 @@ class FdTypesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def fd_type_params
       params.require(:fd_type).permit(:name, :foodtype)
+    end
+    
+    def authorized_for_admin
+      redirect_to root_url unless current_user.has_role? :admin
     end
 end
