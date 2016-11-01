@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # match 'admin/user/:id'
 
   # get 'admin/update_user'
-
+  resources :fd_types
   resources :fooddrinks
   # get 'users/show'
   
@@ -75,7 +75,6 @@ Rails.application.routes.draw do
   #   end
   
   Commontator::Engine.routes.draw do
-  resources :fd_types
   resources :threads, :only => [:show] do
     resources :comments, :except => [:index, :destroy], :shallow => true do
       member do

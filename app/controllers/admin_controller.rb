@@ -5,6 +5,7 @@ class AdminController < ApplicationController
   def index
     @users = User.all
     @fooddrinks = Fooddrink.all
+    @categories = FdType.all
   end
 
   def update_user
@@ -23,15 +24,6 @@ class AdminController < ApplicationController
     user.destroy
     respond_to do |format|
       format.html { redirect_to admin_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-  
-  def destroy_fooddrink
-    fooddrink = Fooddrink.find(params[:id])
-    fooddrink.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_url, notice: 'Food/Drink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

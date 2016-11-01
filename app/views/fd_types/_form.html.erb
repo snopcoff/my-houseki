@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :foodtype %><br>
-    <%= f.text_field :foodtype %>
+    <%= f.select :foodtype, options_for_select(["food", "drink"]) %>
   </div>
   <div class="actions">
     <%= f.submit %>
