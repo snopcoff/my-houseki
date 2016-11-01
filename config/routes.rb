@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fd_types
   get 'admin' => 'admin#index'
   put 'admin/user/:id' => 'admin#update_user'
   patch 'admin/user/:id' => 'admin#update_user'
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   # match 'admin/user/:id'
 
   # get 'admin/update_user'
-
+  resources :fd_types
   resources :fooddrinks
   # get 'users/show'
   

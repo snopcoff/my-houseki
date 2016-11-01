@@ -1,0 +1,2 @@
+module FdTypesHelper
+end
