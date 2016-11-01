@@ -2586,3 +2586,1205 @@ Processing by AdminController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
   Rendered layouts/_header.html.erb (4.9ms)
 Completed 200 OK in 241ms (Views: 178.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:27:48 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.8ms)
+  [1m[35mFooddrink Load (0.4ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admin/_fooddrink.html.erb (8.4ms)
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (3.5ms)
+  Rendered admin/index.html.erb within layouts/application (21.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.9ms)
+Completed 200 OK in 193ms (Views: 185.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/fooddrinks/new" for 113.190.234.195 at 2016-11-01 07:27:51 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered fooddrinks/_form.html.erb (2.6ms)
+  Rendered fooddrinks/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.6ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/fooddrinks/_form.html.erb:87: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+             ^
+/home/ubuntu/workspace/app/views/fooddrinks/_form.html.erb:88: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/app/views/fooddrinks/_form.html.erb:90: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/fooddrinks/_form.html.erb:87: syntax error, unexpected keyword_end, expecting ')'
+  app/views/fooddrinks/_form.html.erb:88: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/fooddrinks/_form.html.erb:90: syntax error, unexpected keyword_end, expecting ')'
+  app/views/fooddrinks/new.html.erb:4:in `_app_views_fooddrinks_new_html_erb__2974492727803847229_70059384410220'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.8ms)
+
+
+Started GET "/fooddrinks/new" for 113.190.234.195 at 2016-11-01 07:28:06 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered fooddrinks/_form.html.erb (14.9ms)
+  Rendered fooddrinks/new.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    40:       <div class="form-group">
+    41:         <%= f.label "Category", class: "col-md-4 control-label" %>
+    42:         <div class="col-md-8">
+    43:           <%= f.select :fd_types, options_from_collection_for_select(@fd_types, "id", "name") %>
+    44:         </div>
+    45:       </div>
+    46:       
+  app/views/fooddrinks/_form.html.erb:43:in `block in _app_views_fooddrinks__form_html_erb__2848882409048844756_70059378124060'
+  app/views/fooddrinks/_form.html.erb:1:in `_app_views_fooddrinks__form_html_erb__2848882409048844756_70059378124060'
+  app/views/fooddrinks/new.html.erb:4:in `_app_views_fooddrinks_new_html_erb__2974492727803847229_70059384410220'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.4ms)
+
+
+Started GET "/fooddrinks/new" for 113.190.234.195 at 2016-11-01 07:29:52 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.6ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mFdType Load (0.6ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered fooddrinks/_form.html.erb (40.1ms)
+  Rendered fooddrinks/new.html.erb within layouts/application (41.6ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 6.0ms)
+
+ActionView::Template::Error (undefined method `fd_types' for #<Fooddrink:0x007f6ff1a98e50>
+Did you mean?  fd_type_id):
+    40:       <div class="form-group">
+    41:         <%= f.label "Category", class: "col-md-4 control-label" %>
+    42:         <div class="col-md-8">
+    43:           <%= f.select :fd_types, options_from_collection_for_select(@categories, "id", "name") %>
+    44:         </div>
+    45:       </div>
+    46:       
+  app/views/fooddrinks/_form.html.erb:43:in `block in _app_views_fooddrinks__form_html_erb__2848882409048844756_70059386881440'
+  app/views/fooddrinks/_form.html.erb:1:in `_app_views_fooddrinks__form_html_erb__2848882409048844756_70059386881440'
+  app/views/fooddrinks/new.html.erb:4:in `_app_views_fooddrinks_new_html_erb__2974492727803847229_70059384410220'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.8ms)
+
+
+Started GET "/fooddrinks/new" for 113.190.234.195 at 2016-11-01 07:30:24 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mFdType Load (0.5ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered fooddrinks/_form.html.erb (28.6ms)
+  Rendered fooddrinks/new.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (7.4ms)
+Completed 200 OK in 223ms (Views: 206.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:32:13 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.3ms)
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/_fooddrink.html.erb (10.3ms)
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (4.6ms)
+  Rendered admin/index.html.erb within layouts/application (23.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.1ms)
+Completed 200 OK in 178ms (Views: 170.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/fd_types/new" for 113.190.234.195 at 2016-11-01 07:32:17 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#new as HTML
+  Rendered fd_types/_form.html.erb (3.0ms)
+  Rendered fd_types/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (6.8ms)
+Completed 200 OK in 167ms (Views: 163.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/fd_types" for 113.190.234.195 at 2016-11-01 07:32:34 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2CCNkjeF6X8+A+4eS8Y6t0kt9x2fMKLXsti0nJfZ83xyO3OhfPHQ5oNZYFVUOzxbyfZJWm7Itzw3ckXz+hdp1w==", "fd_type"=>{"name"=>"Drink", "foodtype"=>"drink"}, "commit"=>"Create Fd type"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFdType Exists (0.4ms)[0m  SELECT  1 AS one FROM "fd_types" WHERE LOWER("fd_types"."name") = LOWER('Drink') LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "fd_types" ("name", "foodtype", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Drink"], ["foodtype", "drink"], ["created_at", "2016-11-01 07:32:34.726012"], ["updated_at", "2016-11-01 07:32:34.726012"]]
+  [1m[35m (18.9ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/fd_types/9
+Completed 302 Found in 38ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/fd_types/9" for 113.190.234.195 at 2016-11-01 07:32:34 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  [1m[36mFooddrink Load (0.6ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered fd_types/show.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (6.8ms)
+Completed 200 OK in 148ms (Views: 143.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:32:39 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.0ms)
+  [1m[36mFooddrink Load (0.4ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/_fooddrink.html.erb (7.9ms)
+  [1m[36mFdType Load (0.4ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (4.4ms)
+  Rendered admin/index.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 175ms (Views: 168.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/fooddrinks/new" for 113.190.234.195 at 2016-11-01 07:32:51 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered fooddrinks/_form.html.erb (9.7ms)
+  Rendered fooddrinks/new.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.8ms)
+Completed 200 OK in 163ms (Views: 149.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/fooddrinks" for 113.190.234.195 at 2016-11-01 07:33:10 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XhFNx7Y+pxg06airl5YsxTfxKLHb411nqWmoKiaNF5r0CrP0/UqegYmzJuCIayoptyqW9iobSIwsw1lFS0ONMQ==", "fooddrink"=>{"name"=>"Drink One", "address"=>"Ha Noi", "foodtype"=>"false", "fd_type_id"=>"9", "price"=>"0.0", "price_unit"=>"vnd", "file_cache"=>"", "review"=>""}, "commit"=>"Submit"}
+Unpermitted parameters: fd_type_id, file_cache
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+Unpermitted parameters: fd_type_id, file_cache
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fooddrinks" ("name", "address", "foodtype", "review", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Drink One"], ["address", "Ha Noi"], ["foodtype", "f"], ["review", ""], ["user_id", 2], ["created_at", "2016-11-01 07:33:10.208097"], ["updated_at", "2016-11-01 07:33:10.208097"]]
+  [1m[36mFooddrink Load (0.4ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCommontator::Thread Exists (0.3ms)[0m  SELECT  1 AS one FROM "commontator_threads" WHERE ("commontator_threads"."commontable_id" = 6 AND "commontator_threads"."commontable_type" = 'Fooddrink') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "commontator_threads" ("commontable_type", "commontable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["commontable_type", "Fooddrink"], ["commontable_id", 6], ["created_at", "2016-11-01 07:33:10.221358"], ["updated_at", "2016-11-01 07:33:10.221358"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/fooddrinks/6
+Completed 302 Found in 80ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/fooddrinks/6" for 113.190.234.195 at 2016-11-01 07:33:10 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFooddrink Load (0.5ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered fooddrinks/_recommend.html.erb (2.5ms)
+  [1m[35mCommontator::Thread Load (0.4ms)[0m  SELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1  [["commontable_id", 6], ["commontable_type", "Fooddrink"]]
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mCommontator::Subscription Load (1.5ms)[0m  [1mSELECT  "commontator_subscriptions".* FROM "commontator_subscriptions" WHERE "commontator_subscriptions"."subscriber_id" = ? AND "commontator_subscriptions"."subscriber_type" = ? AND "commontator_subscriptions"."thread_id" = ?  ORDER BY "commontator_subscriptions"."id" ASC LIMIT 1[0m  [["subscriber_id", 2], ["subscriber_type", "User"], ["thread_id", 6]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "commontator_comments" WHERE "commontator_comments"."thread_id" = ?  [["thread_id", 6]]
+  Rendered commontator/shared/_thread.html.erb (32.6ms)
+  Rendered fooddrinks/show.html.erb within layouts/application (45.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.7ms)
+Completed 200 OK in 186ms (Views: 170.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:33:15 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.1ms)
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (8.2ms)
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (4.3ms)
+  Rendered admin/index.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.5ms)
+Completed 200 OK in 145ms (Views: 138.3ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/fd_types/9" for 113.190.234.195 at 2016-11-01 07:33:33 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"X5Ra8fYVhYcWUriwYRStBBHmnWTe1fNgyMMzJMcsS3P1j6TCvWG8HqsINvt+6avokT0jIy8t5otNacJLquLR2A==", "id"=>"9"}
+  [1m[35mFdType Load (0.2ms)[0m  SELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "fd_types" WHERE "fd_types"."id" = ?  [["id", 9]]
+  [1m[36m (16.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://houseki-duongtrongdao.c9users.io/fd_types
+Completed 302 Found in 23ms (ActiveRecord: 17.6ms)
+
+
+Started GET "/fd_types" for 113.190.234.195 at 2016-11-01 07:33:34 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#index as HTML
+  [1m[35mFdType Load (0.2ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered fd_types/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (5.9ms)
+Completed 200 OK in 227ms (Views: 224.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:33:41 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (6.1ms)
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (10.5ms)
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (3.8ms)
+  Rendered admin/index.html.erb within layouts/application (23.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (5.3ms)
+Completed 200 OK in 196ms (Views: 188.2ms | ActiveRecord: 2.5ms)
+  [1m[36mFooddrink Load (0.5ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+
+
+Started GET "/fooddrinks/6/edit" for 113.190.234.195 at 2016-11-01 07:36:26 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered fooddrinks/_form.html.erb (12.3ms)
+  Rendered fooddrinks/edit.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 217ms (Views: 138.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:36:35 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.5ms)
+  [1m[35mFooddrink Load (132.5ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (147.4ms)
+  [1m[36mFdType Load (0.2ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (4.3ms)
+  Rendered admin/index.html.erb within layouts/application (160.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.5ms)
+Completed 200 OK in 337ms (Views: 196.7ms | ActiveRecord: 135.0ms)
+
+
+Started GET "/fd_types/new" for 113.190.234.195 at 2016-11-01 07:36:41 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#new as HTML
+  Rendered fd_types/_form.html.erb (2.5ms)
+  Rendered fd_types/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (6.4ms)
+Completed 200 OK in 130ms (Views: 126.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/fd_types" for 113.190.234.195 at 2016-11-01 07:36:50 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aitMPYnjF1olCJGK+yM4/t9UAzCYjv9DWDwVvc7JF3bAMLIOwpcuw5hSH8Hk3j4SX4+9d2l26qjdluTSoweN3Q==", "fd_type"=>{"name"=>"Drink", "foodtype"=>"drink"}, "commit"=>"Create Fd type"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFdType Exists (0.2ms)[0m  SELECT  1 AS one FROM "fd_types" WHERE LOWER("fd_types"."name") = LOWER('Drink') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fd_types" ("name", "foodtype", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Drink"], ["foodtype", "drink"], ["created_at", "2016-11-01 07:36:50.331279"], ["updated_at", "2016-11-01 07:36:50.331279"]]
+  [1m[35m (13.3ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/admin
+Completed 302 Found in 23ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:36:50 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (3.9ms)
+  [1m[35mFooddrink Load (0.2ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (6.9ms)
+  [1m[36mFdType Load (0.2ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (3.5ms)
+  Rendered admin/index.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 152ms (Views: 145.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:38:10 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.3ms)
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  Rendered admin/_fooddrink.html.erb (15.0ms)
+  Rendered admin/index.html.erb within layouts/application (22.2ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (undefined method `category' for #<Fooddrink:0x007f6ff1e42d80>):
+    12:     <tr>
+    13:         <td><%= link_to fooddrink.name, fooddrink_path(fooddrink.id) %></td>
+    14:         <td>
+    15:             <%= fooddrink.category.name %>
+    16:         </td>
+    17:         <td><%=link_to fooddrink.user.name, show_user_path(fooddrink.user.id) %></td>
+    18:         <td>
+  app/views/admin/_fooddrink.html.erb:15:in `block in _app_views_admin__fooddrink_html_erb___2554219131548604688_70059387575060'
+  app/views/admin/_fooddrink.html.erb:11:in `_app_views_admin__fooddrink_html_erb___2554219131548604688_70059387575060'
+  app/views/admin/index.html.erb:3:in `_app_views_admin_index_html_erb___3101941896227672995_70059408780260'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.5ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:38:22 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (6.3ms)
+  [1m[36mFooddrink Load (0.5ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered admin/_fooddrink.html.erb (14.6ms)
+  Rendered admin/index.html.erb within layouts/application (23.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (undefined method `fd_type' for #<Fooddrink:0x007f6ff22c2d60>
+Did you mean?  fd_type_id):
+    12:     <tr>
+    13:         <td><%= link_to fooddrink.name, fooddrink_path(fooddrink.id) %></td>
+    14:         <td>
+    15:             <%= fooddrink.fd_type.name %>
+    16:         </td>
+    17:         <td><%=link_to fooddrink.user.name, show_user_path(fooddrink.user.id) %></td>
+    18:         <td>
+  app/views/admin/_fooddrink.html.erb:15:in `block in _app_views_admin__fooddrink_html_erb___2554219131548604688_70059390570620'
+  app/views/admin/_fooddrink.html.erb:11:in `_app_views_admin__fooddrink_html_erb___2554219131548604688_70059390570620'
+  app/views/admin/index.html.erb:3:in `_app_views_admin_index_html_erb___3101941896227672995_70059408780260'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.3ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:38:54 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.2ms)
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  Rendered admin/_fooddrink.html.erb (15.5ms)
+  Rendered admin/index.html.erb within layouts/application (22.6ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 4.1ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    12:     <tr>
+    13:         <td><%= link_to fooddrink.name, fooddrink_path(fooddrink.id) %></td>
+    14:         <td>
+    15:             <%= fooddrink.fd_type.name %>
+    16:         </td>
+    17:         <td><%=link_to fooddrink.user.name, show_user_path(fooddrink.user.id) %></td>
+    18:         <td>
+  app/views/admin/_fooddrink.html.erb:15:in `block in _app_views_admin__fooddrink_html_erb___2554219131548604688_70059390570620'
+  app/views/admin/_fooddrink.html.erb:11:in `_app_views_admin__fooddrink_html_erb___2554219131548604688_70059390570620'
+  app/views/admin/index.html.erb:3:in `_app_views_admin_index_html_erb___3101941896227672995_70059408780260'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.3ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:39:35 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (138.0ms)
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (13.7ms)
+  [1m[35mFdType Load (0.2ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (8.6ms)
+  Rendered admin/index.html.erb within layouts/application (163.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.3ms)
+Completed 200 OK in 297ms (Views: 289.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/fooddrinks/6/edit" for 113.190.234.195 at 2016-11-01 07:39:49 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mFdType Load (0.4ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered fooddrinks/_form.html.erb (9.2ms)
+  Rendered fooddrinks/edit.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.1ms)
+Completed 200 OK in 191ms (Views: 178.0ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/fooddrinks/6" for 113.190.234.195 at 2016-11-01 07:39:56 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DFRy9B+5MNz3N6+ec7NehW0X7YeP8SLS9fGTj98u1qqmT4zHVM0JRUptIdVsTlhp7cxTwH4JNzlwW2LgsuBMAQ==", "fooddrink"=>{"name"=>"Drink One", "address"=>"Ha Noi", "foodtype"=>"false", "fd_type_id"=>"10", "price"=>"0.0", "price_unit"=>"vnd", "file_cache"=>"", "review"=>""}, "commit"=>"Submit", "id"=>"6"}
+  [1m[35mFooddrink Load (0.1ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+Unpermitted parameters: fd_type_id, file_cache
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCommontator::Thread Load (0.2ms)[0m  [1mSELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1[0m  [["commontable_id", 6], ["commontable_type", "Fooddrink"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/fooddrinks/6
+Completed 302 Found in 32ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/fooddrinks/6" for 113.190.234.195 at 2016-11-01 07:39:56 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFooddrink Load (0.1ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered fooddrinks/_recommend.html.erb (0.9ms)
+  [1m[35mCommontator::Thread Load (0.1ms)[0m  SELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1  [["commontable_id", 6], ["commontable_type", "Fooddrink"]]
+  [1m[36mFooddrink Load (0.1ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mCommontator::Subscription Load (0.3ms)[0m  [1mSELECT  "commontator_subscriptions".* FROM "commontator_subscriptions" WHERE "commontator_subscriptions"."subscriber_id" = ? AND "commontator_subscriptions"."subscriber_type" = ? AND "commontator_subscriptions"."thread_id" = ?  ORDER BY "commontator_subscriptions"."id" ASC LIMIT 1[0m  [["subscriber_id", 2], ["subscriber_type", "User"], ["thread_id", 6]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "commontator_comments" WHERE "commontator_comments"."thread_id" = ?  [["thread_id", 6]]
+  Rendered commontator/shared/_thread.html.erb (23.2ms)
+  Rendered fooddrinks/show.html.erb within layouts/application (28.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (5.0ms)
+Completed 200 OK in 187ms (Views: 174.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:40:03 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (152.5ms)
+  [1m[36mFooddrink Load (0.4ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (15.1ms)
+  [1m[35mFdType Load (0.5ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (6.7ms)
+  Rendered admin/index.html.erb within layouts/application (178.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (6.0ms)
+Completed 200 OK in 369ms (Views: 360.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/fooddrinks/6" for 113.190.234.195 at 2016-11-01 07:40:14 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFooddrink Load (0.1ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  Rendered fooddrinks/_recommend.html.erb (0.9ms)
+  [1m[36mCommontator::Thread Load (0.1ms)[0m  [1mSELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1[0m  [["commontable_id", 6], ["commontable_type", "Fooddrink"]]
+  [1m[35mFooddrink Load (0.1ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mCommontator::Subscription Load (0.1ms)[0m  SELECT  "commontator_subscriptions".* FROM "commontator_subscriptions" WHERE "commontator_subscriptions"."subscriber_id" = ? AND "commontator_subscriptions"."subscriber_type" = ? AND "commontator_subscriptions"."thread_id" = ?  ORDER BY "commontator_subscriptions"."id" ASC LIMIT 1  [["subscriber_id", 2], ["subscriber_type", "User"], ["thread_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "commontator_comments" WHERE "commontator_comments"."thread_id" = ?[0m  [["thread_id", 6]]
+  Rendered commontator/shared/_thread.html.erb (9.8ms)
+  Rendered fooddrinks/show.html.erb within layouts/application (15.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 157ms (Views: 140.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:40:17 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (133.2ms)
+  [1m[36mFooddrink Load (0.4ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (11.4ms)
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (3.8ms)
+  Rendered admin/index.html.erb within layouts/application (151.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 311ms (Views: 302.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:40:40 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (4.3ms)
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (7.8ms)
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (4.5ms)
+  Rendered admin/index.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 140ms (Views: 133.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 113.190.234.195 at 2016-11-01 07:40:53 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  [1m[35mFooddrink Load (0.2ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks"  ORDER BY "fooddrinks"."id" DESC LIMIT 3
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered static_pages/home.html.erb within layouts/application (58.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (7.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (105.8ms)
+Completed 200 OK in 629ms (Views: 563.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:41:04 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (6.5ms)
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (21.8ms)
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (6.3ms)
+  Rendered admin/index.html.erb within layouts/application (38.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (2.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (9.1ms)
+Completed 200 OK in 288ms (Views: 280.6ms | ActiveRecord: 2.4ms)
+  [1m[35mFooddrink Load (0.4ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+
+
+Started GET "/fooddrinks/6/edit" for 113.190.234.195 at 2016-11-01 07:41:59 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFooddrink Load (0.2ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mFdType Load (0.4ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered fooddrinks/_form.html.erb (57.7ms)
+  Rendered fooddrinks/edit.html.erb within layouts/application (59.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.9ms)
+Completed 200 OK in 243ms (Views: 169.7ms | ActiveRecord: 3.8ms)
+
+
+Started PATCH "/fooddrinks/6" for 113.190.234.195 at 2016-11-01 07:42:05 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6C+fBenNCtjdbPgVsLT6yh2AzDZrFXnBeBjNZ8fOgfBCNGE2orkzQWA2dl6vSfwmnVtycZrtbCr9sjwIqgAbWw==", "fooddrink"=>{"name"=>"Drink One", "address"=>"Ha Noi", "foodtype"=>"false", "fd_type_id"=>"10", "price"=>"0.0", "price_unit"=>"vnd", "file_cache"=>"", "review"=>""}, "commit"=>"Submit", "id"=>"6"}
+  [1m[35mFooddrink Load (0.1ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+Unpermitted parameter: file_cache
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCommontator::Thread Load (0.3ms)[0m  [1mSELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1[0m  [["commontable_id", 6], ["commontable_type", "Fooddrink"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "fooddrinks" SET "fd_type_id" = ?, "updated_at" = ? WHERE "fooddrinks"."id" = ?  [["fd_type_id", 10], ["updated_at", "2016-11-01 07:42:05.751134"], ["id", 6]]
+  [1m[36m (16.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://houseki-duongtrongdao.c9users.io/fooddrinks/6
+Completed 302 Found in 194ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/fooddrinks/6" for 113.190.234.195 at 2016-11-01 07:42:06 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFooddrink Load (0.1ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFooddrink Load (0.4ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  Rendered fooddrinks/_recommend.html.erb (166.2ms)
+  [1m[36mCommontator::Thread Load (0.1ms)[0m  [1mSELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1[0m  [["commontable_id", 6], ["commontable_type", "Fooddrink"]]
+  [1m[35mFooddrink Load (0.1ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mCommontator::Subscription Load (0.2ms)[0m  SELECT  "commontator_subscriptions".* FROM "commontator_subscriptions" WHERE "commontator_subscriptions"."subscriber_id" = ? AND "commontator_subscriptions"."subscriber_type" = ? AND "commontator_subscriptions"."thread_id" = ?  ORDER BY "commontator_subscriptions"."id" ASC LIMIT 1  [["subscriber_id", 2], ["subscriber_type", "User"], ["thread_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "commontator_comments" WHERE "commontator_comments"."thread_id" = ?[0m  [["thread_id", 6]]
+  Rendered commontator/shared/_thread.html.erb (27.2ms)
+  Rendered fooddrinks/show.html.erb within layouts/application (199.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.7ms)
+Completed 200 OK in 313ms (Views: 302.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:42:09 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (7.3ms)
+  [1m[35mFooddrink Load (0.4ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFdType Load (0.3ms)[0m  SELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (14.7ms)
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (5.3ms)
+  Rendered admin/index.html.erb within layouts/application (31.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 237ms (Views: 226.9ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/fd_types/10" for 113.190.234.195 at 2016-11-01 07:42:25 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FdTypesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XTktvH7dxtIZ0fD6E5ATqDYvQMO29e9DtzznqfZCMCn3ItOPNan/S6SLfrEMbRVEtvT+hEcN+qgylhbGm4yqgg==", "id"=>"10"}
+  [1m[35mFdType Load (0.2ms)[0m  SELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "fd_types" WHERE "fd_types"."id" = ?  [["id", 10]]
+  [1m[36m (36.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://houseki-duongtrongdao.c9users.io/admin
+Completed 302 Found in 45ms (ActiveRecord: 37.2ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:42:25 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered admin/_user.html.erb (5.5ms)
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFdType Load (0.2ms)[0m  [1mSELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (10.2ms)
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  Rendered admin/_category.html.erb (4.0ms)
+  Rendered admin/index.html.erb within layouts/application (23.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (4.8ms)
+Completed 200 OK in 194ms (Views: 169.3ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/users/sign_out" for 113.190.234.195 at 2016-11-01 07:42:42 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cSexNxp9CcK6Zc0nbRGMo3LEZShACFl1dVL3iTa+vijbPE8EUQkwWwc/Q2xy7IpP8h/bb7HwTJ7w+AbmW3Akgw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "sessions" WHERE "sessions"."id" = ?[0m  [["id", 4]]
+  [1m[35m (14.5ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/
+Completed 302 Found in 110ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/" for 113.190.234.195 at 2016-11-01 07:42:43 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mFdType Load (0.4ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks"  ORDER BY "fooddrinks"."id" DESC LIMIT 3[0m
+  [1m[35mFooddrink Load (0.2ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  Rendered static_pages/home.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.3ms)
+  Rendered layouts/_header.html.erb (14.3ms)
+Completed 200 OK in 160ms (Views: 157.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 113.190.234.195 at 2016-11-01 07:42:45 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.5ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 176ms (Views: 172.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 113.190.234.195 at 2016-11-01 07:42:47 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 142ms (Views: 138.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 113.190.234.195 at 2016-11-01 07:43:09 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TMPLqn0vsPzb58b1+a3OGwAfCREuNo7yKUb0vVmoYKOkDQpUnLeope126DDeampruC+bYMdjyvgsXq3Cpct8qg==", "user"=>{"name"=>"User Delete", "email"=>"userdelete@houseki", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'userdelete@houseki' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "userdelete@houseki"], ["encrypted_password", "$2a$11$sK2OWiXeLQuxocUHkNtQWew8LKQj4nRyMHOaPAk8asL6sXO803/3O"], ["name", "User Delete"], ["created_at", "2016-11-01 07:43:10.085250"], ["updated_at", "2016-11-01 07:43:10.085250"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-11-01 07:43:10.101844"], ["current_sign_in_at", "2016-11-01 07:43:10.101844"], ["last_sign_in_ip", "113.190.234.195"], ["current_sign_in_ip", "113.190.234.195"], ["sign_in_count", 1], ["updated_at", "2016-11-01 07:43:10.104115"], ["id", 3]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/
+Completed 302 Found in 339ms (ActiveRecord: 26.2ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "sessions" WHERE "sessions"."id" = ?  [["id", 5]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 113.190.234.195 at 2016-11-01 07:43:10 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mFdType Load (0.4ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  [1m[35mFooddrink Load (0.4ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks"  ORDER BY "fooddrinks"."id" DESC LIMIT 3
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered static_pages/home.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 3]]
+  Rendered layouts/_header.html.erb (7.5ms)
+Completed 200 OK in 178ms (Views: 173.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/fooddrinks/new" for 113.190.234.195 at 2016-11-01 07:43:17 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 3]]
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered fooddrinks/_form.html.erb (6.6ms)
+  Rendered fooddrinks/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 3]]
+  Rendered layouts/_header.html.erb (5.7ms)
+Completed 200 OK in 328ms (Views: 167.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/fooddrinks" for 113.190.234.195 at 2016-11-01 07:43:36 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WbEoLW954DN/ZzPkKeZ78+lCAPTmbemPd+rTDNDQ5dyxf+nTjuH4akn2HSEOId+DUXKShQ84rYVy8opzLLP51Q==", "fooddrink"=>{"name"=>"Food One", "address"=>"Ha Noi", "foodtype"=>"true", "fd_type_id"=>"4", "price"=>"0.0", "price_unit"=>"vnd", "file_cache"=>"", "review"=>""}, "commit"=>"Submit"}
+Unpermitted parameter: file_cache
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 3]]
+Unpermitted parameter: file_cache
+Unpermitted parameter: file_cache
+Unpermitted parameter: file_cache
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fooddrinks" ("name", "address", "review", "fd_type_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Food One"], ["address", "Ha Noi"], ["review", ""], ["fd_type_id", 4], ["user_id", 3], ["created_at", "2016-11-01 07:43:36.100244"], ["updated_at", "2016-11-01 07:43:36.100244"]]
+  [1m[36mFooddrink Load (0.1ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCommontator::Thread Exists (0.2ms)[0m  SELECT  1 AS one FROM "commontator_threads" WHERE ("commontator_threads"."commontable_id" = 7 AND "commontator_threads"."commontable_type" = 'Fooddrink') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "commontator_threads" ("commontable_type", "commontable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["commontable_type", "Fooddrink"], ["commontable_id", 7], ["created_at", "2016-11-01 07:43:36.106805"], ["updated_at", "2016-11-01 07:43:36.106805"]]
+  [1m[35m (18.6ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/fooddrinks/7
+Completed 302 Found in 47ms (ActiveRecord: 20.3ms)
+
+
+Started GET "/fooddrinks/7" for 113.190.234.195 at 2016-11-01 07:43:36 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FooddrinksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mFooddrink Load (0.3ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered fooddrinks/_recommend.html.erb (1.4ms)
+  [1m[35mCommontator::Thread Load (0.2ms)[0m  SELECT  "commontator_threads".* FROM "commontator_threads" WHERE "commontator_threads"."commontable_id" = ? AND "commontator_threads"."commontable_type" = ? LIMIT 1  [["commontable_id", 7], ["commontable_type", "Fooddrink"]]
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 3]]
+  [1m[36mCommontator::Subscription Load (0.2ms)[0m  [1mSELECT  "commontator_subscriptions".* FROM "commontator_subscriptions" WHERE "commontator_subscriptions"."subscriber_id" = ? AND "commontator_subscriptions"."subscriber_type" = ? AND "commontator_subscriptions"."thread_id" = ?  ORDER BY "commontator_subscriptions"."id" ASC LIMIT 1[0m  [["subscriber_id", 3], ["subscriber_type", "User"], ["thread_id", 7]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "commontator_comments" WHERE "commontator_comments"."thread_id" = ?  [["thread_id", 7]]
+  Rendered commontator/shared/_thread.html.erb (14.9ms)
+  Rendered fooddrinks/show.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 3]]
+  Rendered layouts/_header.html.erb (7.6ms)
+Completed 200 OK in 280ms (Views: 204.7ms | ActiveRecord: 2.2ms)
+  [1m[36mFooddrink Load (0.6ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+
+
+Started DELETE "/users/sign_out" for 113.190.234.195 at 2016-11-01 07:43:56 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XetcfPxsYDwa79vbTtKi4tssT0YFzQTlNxy5MGOI+su1JZ2CHfR4ZSx+9R5pFQaSYxzdN+yYQO8yBOBPn+vmwg=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "sessions" WHERE "sessions"."id" = ?  [["id", 6]]
+  [1m[36m (15.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://houseki-duongtrongdao.c9users.io/
+Completed 302 Found in 26ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/" for 113.190.234.195 at 2016-11-01 07:43:57 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mFdType Load (0.3ms)[0m  [1mSELECT "fd_types".* FROM "fd_types"[0m
+  [1m[35mFooddrink Load (0.2ms)[0m  SELECT  "fooddrinks".* FROM "fooddrinks"  ORDER BY "fooddrinks"."id" DESC LIMIT 3
+  [1m[36mFooddrink Load (0.4ms)[0m  [1mSELECT "fooddrinks".* FROM "fooddrinks"[0m
+  Rendered static_pages/home.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.2ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 130ms (Views: 126.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_in" for 113.190.234.195 at 2016-11-01 07:44:08 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 141ms (Views: 138.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in" for 113.190.234.195 at 2016-11-01 07:44:14 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yh0TQU1H8LmhQXma4/B/UDUr0sESYabhzzkJdLM5EEVLUtzZB6JvCPx30PEVBfxalfLUTT15XiOkfs6a/0dMFA==", "user"=>{"email"=>"admin1@houseki", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin1@houseki"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-11-01 07:44:14.720058"], ["sign_in_count", 2], ["updated_at", "2016-11-01 07:44:14.721823"], ["id", 2]]
+  [1m[36m (16.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://houseki-duongtrongdao.c9users.io/
+Completed 302 Found in 170ms (ActiveRecord: 17.4ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "sessions" WHERE "sessions"."id" = ?[0m  [["id", 7]]
+  [1m[35m (17.0ms)[0m  commit transaction
+
+
+Started GET "/" for 113.190.234.195 at 2016-11-01 07:44:14 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mFdType Load (0.2ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  [1m[36mFooddrink Load (0.2ms)[0m  [1mSELECT  "fooddrinks".* FROM "fooddrinks"  ORDER BY "fooddrinks"."id" DESC LIMIT 3[0m
+  [1m[35mFooddrink Load (0.2ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  Rendered static_pages/home.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (5.8ms)
+Completed 200 OK in 125ms (Views: 121.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:44:21 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+  Rendered admin/_user.html.erb (49.4ms)
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFdType Load (0.2ms)[0m  SELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFdType Load (0.1ms)[0m  SELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered admin/_fooddrink.html.erb (12.3ms)
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (4.7ms)
+  Rendered admin/index.html.erb within layouts/application (69.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (5.1ms)
+Completed 200 OK in 237ms (Views: 226.6ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/admin/user/3" for 113.190.234.195 at 2016-11-01 07:44:26 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#destroy_user as HTML
+  Parameters: {"authenticity_token"=>"yilgMR8rbu5Gf8Ot7m8uF6hde2D/4RRlxAcxRdmvVhFrt49E+Z351Mn7Kfsxi2B4QCxeVmRDCIZ5sFeUfD0Usw==", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFooddrink Load (0.3ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks" WHERE "fooddrinks"."user_id" = ?  [["user_id", 3]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."resource_id" = ? AND "roles"."resource_type" = ?[0m  [["resource_id", 7], ["resource_type", "Fooddrink"]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "fooddrinks" WHERE "fooddrinks"."id" = ?  [["id", 7]]
+  [1m[36mCommontator::Subscription Load (0.1ms)[0m  [1mSELECT "commontator_subscriptions".* FROM "commontator_subscriptions" WHERE "commontator_subscriptions"."subscriber_id" = ? AND "commontator_subscriptions"."subscriber_type" = ?[0m  [["subscriber_id", 3], ["subscriber_type", "User"]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users_roles" WHERE "users_roles"."user_id" = ?  [["user_id", 3]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (17.3ms)[0m  commit transaction
+Redirected to https://houseki-duongtrongdao.c9users.io/admin
+Completed 302 Found in 36ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/admin" for 113.190.234.195 at 2016-11-01 07:44:26 +0000
+Cannot render console from 113.190.234.195! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered admin/_user.html.erb (6.2ms)
+  [1m[35mFooddrink Load (0.4ms)[0m  SELECT "fooddrinks".* FROM "fooddrinks"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFdType Load (0.2ms)[0m  SELECT  "fd_types".* FROM "fd_types" WHERE "fd_types"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/_fooddrink.html.erb (10.6ms)
+  [1m[35mFdType Load (0.3ms)[0m  SELECT "fd_types".* FROM "fd_types"
+  Rendered admin/_category.html.erb (4.3ms)
+  Rendered admin/index.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered fooddrinks/_fooddrink_search_box.html.erb (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  Rendered layouts/_header.html.erb (5.1ms)
+Completed 200 OK in 190ms (Views: 183.1ms | ActiveRecord: 2.6ms)

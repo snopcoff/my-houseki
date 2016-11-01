@@ -32,7 +32,7 @@ class FdTypesController < ApplicationController
 
     respond_to do |format|
       if @fd_type.save
-        format.html { redirect_to @fd_type, notice: 'Fd type was successfully created.' }
+        format.html { redirect_to admin_url, notice: 'Fd type was successfully created.' }
         format.json { render :show, status: :created, location: @fd_type }
       else
         format.html { render :new }
@@ -60,7 +60,7 @@ class FdTypesController < ApplicationController
   def destroy
     @fd_type.destroy
     respond_to do |format|
-      format.html { redirect_to fd_types_url, notice: 'Fd type was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Fd type was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
