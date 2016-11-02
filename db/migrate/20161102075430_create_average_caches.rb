@@ -8,6 +8,7 @@ class CreateAverageCaches < ActiveRecord::Migration
       t.timestamps
     end
 
+    add_index :average_caches, [:rater_id, :rateable_id, :rateable_type], :name => 'average_caches_index'
   end
 
   def self.down

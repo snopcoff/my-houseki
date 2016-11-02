@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20161102075431) do
     t.datetime "updated_at"
   end
 
+  add_index "average_caches", ["rater_id", "rateable_id", "rateable_type"], name: "average_caches_index"
+
   create_table "commontator_comments", force: :cascade do |t|
     t.string   "creator_type"
     t.integer  "creator_id"
