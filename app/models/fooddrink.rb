@@ -7,5 +7,7 @@ class Fooddrink < ActiveRecord::Base
     validates :user, presence: true
     acts_as_commontable
     
+    ratyrate_rateable 'overall'
+    
     resourcify
 end
