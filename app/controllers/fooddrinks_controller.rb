@@ -15,6 +15,7 @@ class FooddrinksController < ApplicationController
   # GET /fooddrinks/1.json
   def show
     @fooddrinks = Fooddrink.all
+    Fooddrink.update_avg_qty(@fooddrink)
   end
 
   # GET /fooddrinks/new
@@ -67,7 +68,7 @@ class FooddrinksController < ApplicationController
     end
   end
 
-  private
+  protected
     # Use callbacks to share common setup or constraints between actions.
     def set_fooddrink
       @fooddrink = Fooddrink.find(params[:id])
@@ -75,11 +76,27 @@ class FooddrinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fooddrink_params
-      params.require(:fooddrink).permit(:user_id, :name, :address, :foodtype, :file, :created_at, :price, :price_unit, :review, :fd_type_id)
+      params.require(:fooddrink).permit(:user_id, :name, :address, :foodtype, :file, :created_at, :price, :price_unit, :review, :fd_type_id, :avg, :qty)
     end
     
     def load_category
       @categories = FdType.all
     end
-    
+
+=begin    
+    def update_avg_qty
+      sum = 0
+      qty = 0
+      
+      @fooddrink.rates('overall').each do |rate|
+        sum += rate
+        qty += 1
+      end
+      
+      @fooddrink.avg = sum/qty.to_f
+      @fooddrink.qty = qty
+      @fooddrink.save!
+    end
+=end
+
 end

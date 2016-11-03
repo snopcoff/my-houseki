@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102075431) do
+ActiveRecord::Schema.define(version: 20161103063448) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -85,6 +85,8 @@ ActiveRecord::Schema.define(version: 20161102075431) do
     t.string   "price_unit",                         default: "vnd"
     t.text     "review"
     t.integer  "fd_type_id"
+    t.float    "avg",                                default: 0.0
+    t.integer  "qty",                                default: 0
   end
 
   add_index "fooddrinks", ["fd_type_id"], name: "index_fooddrinks_on_fd_type_id"
