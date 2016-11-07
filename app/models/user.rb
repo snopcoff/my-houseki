@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   
   has_many :fooddrinks, :dependent => :destroy
   acts_as_commontator
+  
+  ratyrate_rater
          
   validates :name, presence: true
   

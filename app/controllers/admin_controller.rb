@@ -5,6 +5,7 @@ class AdminController < ApplicationController
   def index
     @users = User.all
     @fooddrinks = Fooddrink.all
+    @categories = FdType.all
   end
 
   def update_user
@@ -20,18 +21,19 @@ class AdminController < ApplicationController
   
   def destroy_user
     user = User.find(params[:id])
+    rates = Rate.where(:rater_id => user.id)
+    fooddrinks = Fooddrink.all
     user.destroy
+    rates.delete_all
+    
+    fooddrinks.each do |fooddrink|
+      Fooddrink.update_avg_qty(fooddrink)
+      rating_cache = RatingCache.find_by(:cacheable_id => fooddrink.id)
+      rating_cache.update_attributes(:avg => fooddrink.avg, :qty => fooddrink.qty) if rating_cache.presence
+    end
+    
     respond_to do |format|
       format.html { redirect_to admin_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-  
-  def destroy_fooddrink
-    fooddrink = Fooddrink.find(params[:id])
-    fooddrink.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_url, notice: 'Food/Drink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

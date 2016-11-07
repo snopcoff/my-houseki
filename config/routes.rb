@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
+  resources :fd_types
   get 'admin' => 'admin#index'
   put 'admin/user/:id' => 'admin#update_user'
   patch 'admin/user/:id' => 'admin#update_user'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   # match 'admin/user/:id'
 
   # get 'admin/update_user'
-
+  resources :fd_types
   resources :fooddrinks
   # get 'users/show'
   
@@ -74,6 +76,7 @@ Rails.application.routes.draw do
   #   end
   
   Commontator::Engine.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   resources :threads, :only => [:show] do
     resources :comments, :except => [:index, :destroy], :shallow => true do
       member do
