@@ -1,6 +1,6 @@
 class FdTypesController < ApplicationController
   before_action :set_fd_type, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :authorized_for_admin
+  before_action :authenticate_user!, :authorized_for_admin, only: [:edit, :update, :destroy]
 
   # GET /fd_types
   # GET /fd_types.json
