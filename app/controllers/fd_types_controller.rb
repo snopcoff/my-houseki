@@ -1,6 +1,6 @@
 class FdTypesController < ApplicationController
   before_action :set_fd_type, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :authorized_for_admin
+  before_action :authenticate_user!, :authorized_for_admin, only: [:edit, :update, :destroy]
 
   # GET /fd_types
   # GET /fd_types.json
@@ -11,9 +11,7 @@ class FdTypesController < ApplicationController
   # GET /fd_types/1
   # GET /fd_types/1.json
   def show
-     @fooddrinks = Fooddrink.all
-    @users = User.all
-    
+    @fooddrinks = @fd_type.fooddrinks.paginate(page: params[:page], per_page: 9).order(created_at: :asc)
     @fd_types = FdType.all
   end
 

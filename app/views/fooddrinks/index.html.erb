@@ -1,17 +1,27 @@
 <% if @results.presence %>
-    <% @results.each do |result| %>
-        <%= link_to(fooddrink_path(result.id)) do %>
-            <%= image_tag result.file, class: 'img-thumbnail' %><br />
-            <%= result.name %><br />
-            Type: 
-            <% if result.foodtype %>
-                Food
-            <% else %>
-                Drink
-            <% end %><br />
-            Author: <%= result.user.name %>
-        <% end %>
-    <% end %>
+    <div class="row">
+        <div class="col-md-12">
+            <% @results.each do |result| %>
+                <div class="col-md-4">
+                    <%= link_to(fooddrink_path(result.id)) do %>
+                        <%= image_tag result.file, class: 'img-thumbnail' %><br />
+                        <%= result.name %><br />
+                        Type: 
+                        <% if result.foodtype %>
+                            Food
+                        <% else %>
+                            Drink
+                        <% end %><br />
+                        Author: <%= result.user.name %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+        
+        <div class="col-md-6 col-md-offset-3">
+            <%= will_paginate @results %>
+        </div>
+    </div>
 <% else %>
 Result not found.
 <% end %>

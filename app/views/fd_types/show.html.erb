@@ -1,14 +1,17 @@
-
-<link rel="stylesheet" href="//demo.neontheme.com/assets/css/bootstrap.css">
-<link rel="stylesheet" href="//demo.neontheme.com/assets/css/neon-core.css">
+<link rel="stylesheet"
+	href="//demo.neontheme.com/assets/css/bootstrap.css"
+	id="style-resource-4">
+<link rel="stylesheet"
+	href="//demo.neontheme.com/assets/css/neon-core.css"
+	id="style-resource-5">
 
 <style>
 
 
 .temp {
-      background-color: #2b303a;
-  list-style: none;
-      padding: 0;
+    background-color: #2b303a;
+    list-style: none;
+    padding: 0;
     margin-bottom: 20px;
     border-right: 1px solid black;
     box-sizing: border-box;
@@ -24,37 +27,36 @@
 }
 
 .temp li a:hover{
-   background-color: rgba(69, 74, 84, 0.3);
-    color: #fff;
+  background-color: rgba(69, 74, 84, 0.3);
+  color: #fff;
 }
 
-ul li {
-   background-color: #2b303a;
+.temp ul li {
+  background-color: #2b303a;
 }
-li {
+.temp li {
   display: list-item;
   text-align: -webkit-match-parent;
 }
 
-ul {
+.temp ul {
   
-  	height: auto; position: static; margin-bottom: 5px; width: 100%;
+  height: auto; position: static; margin-bottom: 5px; width: 100%;
   line-height: 18px;
-    display: block;
-    list-style-type: disc;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 40px;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
 }
 
 .menu{
-   color:#BB5501;
-   font-family:cursive;
-   font-size:48px;
-   text-shadow:5px 2px #BB5501;
-   letter-spacing: 5px;
+  color:#BB5501;
+  font-family:cursive;
+  font-size:48px;
+  text-shadow:5px 2px #BB5501;
+  letter-spacing: 5px;
 }
 </style>
 
@@ -108,32 +110,18 @@ ul {
   </div>
   
   <div class="col-md-9 right-side">
-    <% if @fd_type.name %>
-   <div class="col-md-12">
-      <% @fooddrinks.each do |food| %>
-          <% if food.foodtype %>
-            <div class="col-md-4">
-              <%= link_to fooddrink_path(food.id) do %>
-                <%= image_tag(food.file, class: "img-thumbnail cover") %>
-              <% end %>
-            </div>
-          <% end %>
-      <% end %>
-    </div>
-    <% end %>
-    
-     <% if !@fd_type.name %>
     <div class="col-md-12">
-      <% @fooddrinks.each do |drink| %>
-        <% if !drink.foodtype %>
-          <div class="col-md-4">
-            <%= link_to fooddrink_path(drink.id) do %>
-              <%= image_tag(drink.file, class: "img-thumbnail cover") %>
-            <% end %>
-          </div>
-        <% end %>
+      <% @fooddrinks.each do |food| %>
+        <div class="col-md-4">
+          <%= link_to fooddrink_path(food.id) do %>
+            <%= image_tag(food.file, class: "img-thumbnail cover") %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-    <% end %>
+    
+    <div class="col-md-6 col-md-offset-3">
+      <%= will_paginate @fooddrinks %>
+    </div>
   </div>
 </div>

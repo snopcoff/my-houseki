@@ -8,7 +8,7 @@ class FooddrinksController < ApplicationController
   # GET /fooddrinks
   # GET /fooddrinks.json
   def index
-    @results = @search.result
+    @results = @search.result.paginate(page: params[:page], per_page: 9).order(created_at: :asc)
   end
 
   # GET /fooddrinks/1
