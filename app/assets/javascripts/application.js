@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery.raty
+//= require jquery.slick
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
