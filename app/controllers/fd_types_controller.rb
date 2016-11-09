@@ -11,9 +11,7 @@ class FdTypesController < ApplicationController
   # GET /fd_types/1
   # GET /fd_types/1.json
   def show
-     @fooddrinks = Fooddrink.all
-    @users = User.all
-    
+    @fooddrinks = @fd_type.fooddrinks.paginate(page: params[:page], per_page: 9).order(created_at: :asc)
     @fd_types = FdType.all
   end
 
