@@ -41,6 +41,12 @@ $search-border-radius: 7px;
     border-bottom-right-radius: $search-border-radius;
   }
 }
+.thumbnail {
+  .food-name{
+    text-transform: capitalize;
+    font-size: 12px;
+  }
+}
 
 .description-box{
   min-height: 200px;
