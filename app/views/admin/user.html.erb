@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h1>Users</h1>
+<h1>Users (<%= @users.count %>)</h1>
 <table class="table table-bordered table-hover">
   <thead>
     <thead>
@@ -17,9 +17,9 @@
         <td><%= user.roles.first.name if user.roles.first.presence %></td>
         <td>
           <%= form_tag("/admin/user/" + user.id.to_s, method: :PUT) do %>
-              <%= submit_tag is_admin(user) %>
+              <%= submit_tag is_admin(user), class: "btn btn-primary" %>
           <% end %>
-          <%= button_to "Delete User", delete_user_path(user.id), data: { confirm: "Are you sure?" }, method: :delete %>
+          <%= button_to "Delete User", delete_user_path(user.id), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
         </td>
       </tr>
     <% end %>

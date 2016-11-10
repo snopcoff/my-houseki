@@ -25,10 +25,10 @@ var options = {
     closeButton: true,
     progressBar: true,
     tapToDismiss: true,
-    showDuration: 300,
-    hideDuration: 1000,
-    extendedTimeOut: 1000,
-    timeOut: 4000,
+    showDuration: 150,
+    hideDuration: 800,
+    extendedTimeOut: 800,
+    timeOut: 3000,
 }
 
 function fd_type_select() {

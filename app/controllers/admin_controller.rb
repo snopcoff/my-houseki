@@ -11,7 +11,8 @@ class AdminController < ApplicationController
   end
   
   def category
-    @categories = FdType.all
+    @foods = FdType.where(foodtype: "food")
+    @drinks = FdType.where(foodtype: "drink")
   end
 
   def update_user
