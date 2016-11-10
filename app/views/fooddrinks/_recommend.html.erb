@@ -1,8 +1,20 @@
 <% @fooddrinks.each do |fooddrink| %>
     <% if fooddrink.id != @fooddrink.id &&\
         fooddrink.user_id == @fooddrink.user_id %>
-        <%= link_to fooddrink_path(fooddrink.id) do %>
-            <%= image_tag(fooddrink.file, class: "img-thumbnail cover") %>
-        <% end %>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <%= link_to fooddrink_path(fooddrink.id) do %>
+                <%= image_tag(fooddrink.file, class: " cover") %>
+            <% end %>
+            <div class="caption">
+              <label class="food-name"><%= fooddrink.name.length > 25 ? fooddrink.name[0, 25] + '...' : fooddrink.name %></label>
+              <div>
+                <%= fooddrink.address.length > 25 ? fooddrink.address[0, 25] + '...' : fooddrink.address %>
+              </div>
+            </div>
+          </div>
+        </div>
+
     <% end %>
 <% end %>
+<div class="clearfix"></div>

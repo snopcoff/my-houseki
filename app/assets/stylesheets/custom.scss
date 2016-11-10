@@ -12,10 +12,6 @@ section {
   overflow: auto;
 }
 
-a:visited {
-  color: #ffffff;
-}
-
 textarea {
   resize: none;
 }
@@ -45,6 +41,7 @@ textarea {
   top: 90px;
   min-width: 300px;
 }
+
 div.auth-content:hover, div.auth-content:active, div.auth-content:focus {
   background: rgba(255, 255, 255, 0.6);
 }
@@ -53,6 +50,11 @@ div.auth-content:hover, div.auth-content:active, div.auth-content:focus {
   text-align: center;
   .actions {
     text-align: left;
+    .btn-primary {
+      &:visited {
+        @extend .btn-primary;
+      }
+    }
   }
   .form-group {
     text-align: left;
@@ -65,6 +67,16 @@ div.auth-content:hover, div.auth-content:active, div.auth-content:focus {
 .avatar {
   width: 200px;
   height: 200px;
+  border: 1px solid black;
+}
+
+.social-button-group{
+  width: 600px;
+}
+
+.small-avatar {
+  width: 25px;
+  height: 25px;
   border: 1px solid black;
 }
 
@@ -111,6 +123,7 @@ div.auth-content:hover, div.auth-content:active, div.auth-content:focus {
   height: 100px;
   border: 1px solid black;
 }
-.social-button-group{
+
+.social-button-group {
   width: 600px;
 }
