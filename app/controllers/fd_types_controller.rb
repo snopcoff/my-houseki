@@ -31,7 +31,7 @@ class FdTypesController < ApplicationController
 
     respond_to do |format|
       if @fd_type.save
-        format.html { redirect_to admin_url, notice: 'Fd type was successfully created.' }
+        format.html { redirect_to admin_category_url, notice: 'Fd type was successfully created.' }
         format.json { render :show, status: :created, location: @fd_type }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class FdTypesController < ApplicationController
   def update
     respond_to do |format|
       if @fd_type.update(fd_type_params)
-        format.html { redirect_to @fd_type, notice: 'Fd type was successfully updated.' }
+        format.html { redirect_to admin_category_url, notice: 'Fd type was successfully updated.' }
         format.json { render :show, status: :ok, location: @fd_type }
       else
         format.html { render :edit }
