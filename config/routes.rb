@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   patch 'admin/user/:id' => 'admin#update_user'
   # delete 'admin/user/:id' => 'admin#destroy_user'
   match 'admin/user/:id' => 'admin#destroy_user', via: :delete, as: 'delete_user'
+  get 'static_pages/:foodtype' => 'static_pages#fd_list', as: 'fd_list'
   
   # match 'admin/user/:id'
 
