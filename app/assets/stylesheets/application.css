@@ -153,3 +153,12 @@
     background-color: #01b3eb;
 }
 
+
+body {
+    background-image: url("../bg.jpg");
+    background-size: cover;
+}
+
+.container:not(.nav-container) {
+    background-color: lightgrey;
+}

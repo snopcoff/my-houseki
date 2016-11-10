@@ -4,5 +4,8 @@
       <%= link_to fooddrink_path(food.id) do %>
         <%= image_tag(food.file, class: "img-thumbnail cover") %>
       <% end %>
+      <h4 class="div-co-name"><%= food.name %>
+      <br>[ <%= food.address %>]
+      </h4>
     </div>
 <% end %>
