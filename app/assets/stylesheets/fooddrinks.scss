@@ -18,20 +18,16 @@ $search-text: black;
 $search-border-radius: 7px;
 
 .search-box {
-  width: 500px;
   input {
     color: $search-text;
     background-color: $search-box;
     border: transparent;
     border-radius: $search-border-radius;
-    width: 700px;
-  }
-  input:focus{
-    outline: 0;
   }
   input:hover {
     color: black;
     background-color: white;
+
   }
   .input-group-addon {
     background-color: $search-box;
@@ -39,12 +35,6 @@ $search-border-radius: 7px;
     border: 3px $search-box;
     border-top-right-radius: $search-border-radius;
     border-bottom-right-radius: $search-border-radius;
-  }
-}
-.thumbnail {
-  .food-name{
-    text-transform: capitalize;
-    font-size: 12px;
   }
 }
 
