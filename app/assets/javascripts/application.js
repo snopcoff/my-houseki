@@ -30,18 +30,19 @@ var options = {
     extendedTimeOut: 1000,
     timeOut: 4000,
 }
+
 function fd_type_select() {
     var is_food = $('input[name="fooddrink[foodtype]"]:checked').val();
     var selectData = $('option', 'select#fd-select-data');
     var selectAddress = $('select#fooddrink_fd_type_id');
     selectAddress.empty();
-    if (is_food == "true"){
+    if (is_food == "true") {
         $.each(selectData, function (key, value) {
-            if ( $(value).data('type') === 'food') {
+            if ($(value).data('type') === 'food') {
                 selectAddress.append($(value).clone());
             }
         });
-    }else {
+    } else {
         $.each(selectData, function (key, value) {
             if ($(value).data('type') === 'drink') {
                 selectAddress.append($(value).clone());
@@ -50,7 +51,7 @@ function fd_type_select() {
     }
 }
 
-window.onload = function reset() {
+function initPage() {
     toastr.options = options;
     var notice = $('#notice');
     if (notice.text() != "") {
@@ -64,10 +65,12 @@ window.onload = function reset() {
             toastr.error(obj.text());
         });
     }
-
     fd_type_select();
     $('#new_fooddrink input[name="fooddrink[foodtype]"]').bind('change', function () {
         fd_type_select();
     });
-
 }
+
+document.addEventListener("turbolinks:load", function() {
+    initPage();
+})
