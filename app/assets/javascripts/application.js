@@ -66,7 +66,7 @@ function initPage() {
         });
     }
     fd_type_select();
-    $('#new_fooddrink input[name="fooddrink[foodtype]"]').bind('change', function () {
+    $('input[name="fooddrink[foodtype]"]').bind('change', function () {
         fd_type_select();
     });
 }
