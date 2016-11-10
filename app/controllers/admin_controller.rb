@@ -2,9 +2,15 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :authorized_for_admin
   
-  def index
+  def user
     @users = User.all
+  end
+  
+  def fooddrink
     @fooddrinks = Fooddrink.all
+  end
+  
+  def category
     @categories = FdType.all
   end
 
