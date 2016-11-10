@@ -16,6 +16,7 @@ class FooddrinksController < ApplicationController
   def show
     @fooddrinks = Fooddrink.all
     Fooddrink.update_avg_qty(@fooddrink)
+    @recommends = Fooddrink.where(user_id: @fooddrink.user_id).where.not(id: @fooddrink.id).order(created_at: :desc)
   end
 
   # GET /fooddrinks/new

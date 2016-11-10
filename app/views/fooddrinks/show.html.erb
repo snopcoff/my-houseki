@@ -51,7 +51,7 @@
 </div>
 
 <div>
-  <h3>Recommend</h3>
+  <h3>Recommend (<%= @recommends.presence ? @recommends.count : 0 %>)</h3>
   <%= render 'fooddrinks/recommend.html.erb' %>
 </div>
 
