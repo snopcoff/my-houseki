@@ -1,7 +1,8 @@
 <% @fooddrinks.each do |fooddrink| %>
-    <div class="col-md-4">
+    <div class="col-md-4 users-show-fooddrink">
         <%= link_to fooddrink_path(fooddrink.id) do %>
             <%= image_tag(fooddrink.file, class: "img-thumbnail avatar") %>
         <% end %>
+        <h5 class="div-co-name"><%= fooddrink.name %></h5>
     </div>
 <% end %>
