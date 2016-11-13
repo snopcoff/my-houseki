@@ -1,4 +1,8 @@
-<div class="row">
+<link rel="stylesheet" href="//demo.neontheme.com/assets/css/bootstrap.css" >
+<link rel="stylesheet" href="//demo.neontheme.com/assets/css/neon-core.css" >
+<link rel="stylesheet" href="//demo.neontheme.com/assets/css/font-icons/entypo/css/entypo.css">
+
+<div class="page-container sidebar-collapsed">
   <div class="col-md-3 left-side">
     <%= render 'layouts/side' %>
   </div>
@@ -12,7 +16,9 @@
                     <%= image_tag(fd.file, class: "img-thumbnail avatar") %>
                 <% end %>
             </div>
+            <!--<h4 class="div-co-name"></%= fd.name %></h4>-->
         <% end %>
+        
     </div>
     <div class="col-md-6 col-md-offset-3">
         <%= will_paginate @fdall %>

@@ -162,3 +162,19 @@ body {
 .container:not(.nav-container) {
     background-color: lightgrey;
 }
+
+ /*new review*/
+.slick-dots li {
+  display: inline-block;
+  }
+  
+.div-co.row.one-time {
+  width: 100%;
+  margin: auto;
+}
+.div-co.row ul li{
+  background: none;
+} 
+.slick-list.draggable {
+  background-color: transparent;
+}
